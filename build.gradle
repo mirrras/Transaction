@@ -1,0 +1,59 @@
+plugins {
+    id 'java'
+    id 'org.springframework.boot' version '3.2.5'
+    id 'io.spring.dependency-management' version '1.1.4'
+}
+
+group = 'com.example'
+version = '0.0.1-SNAPSHOT'
+
+java {
+    sourceCompatibility = '17'
+}
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    implementation 'org.springframework.boot:spring-boot-starter-actuator'
+    implementation 'org.springframework.boot:spring-boot-starter-data-jpa'
+
+    implementation 'org.springframework.boot:spring-boot-starter-security'
+    implementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+    implementation 'org.springframework.boot:spring-boot-starter-webflux'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+
+    implementation 'org.springframework.boot:spring-boot-starter-validation'
+    implementation 'io.micrometer:micrometer-core'
+    implementation 'io.projectreactor:reactor-core'
+    runtimeOnly 'com.h2database:h2'
+    runtimeOnly 'org.postgresql:postgresql'
+    implementation 'org.postgresql:postgresql'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    testImplementation 'io.projectreactor:reactor-test'
+    testImplementation 'org.springframework.security:spring-security-test'
+    testImplementation 'junit:junit'
+    testImplementation 'org.mockito:mockito-core'
+    implementation 'com.fasterxml.jackson.core:jackson-databind'
+    implementation 'com.google.code.gson:gson'
+    implementation 'org.springframework.batch:spring-batch-core'
+
+    implementation 'org.springframework.boot:spring-boot-starter'
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+    testImplementation 'org.springframework.boot:spring-boot-starter-test'
+    implementation 'io.springfox:springfox-boot-starter:3.0.0'
+    implementation 'javax.servlet:javax.servlet-api:4.0.1'
+
+    testImplementation 'junit:junit:4.13.2'
+    testImplementation 'org.testng:testng:7.4.0'
+
+
+}
+
+tasks.named('test') {
+    useJUnitPlatform()
+}
